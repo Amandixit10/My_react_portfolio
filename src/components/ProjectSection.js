@@ -1,7 +1,7 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable prettier/prettier */
 import React from 'react'
-import { Swiper, SwiperSlide} from'swiper/react';
+import { Swiper} from'swiper/react';
 import styled from 'styled-components';
 import SectionTitle from './SectionTitle';
 import projects from '../assets/data/projects';
