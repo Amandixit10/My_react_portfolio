@@ -7,53 +7,57 @@ import { Link } from'react-router-dom';
 import styled from 'styled-components';
 import projectImg from'../assets/images/projectImg.png';
 
-const ProjectItemStyles=styled.div` 
-.projectItem-img{
-    width: 100%;
+
+const ProjectItemStyle = styled.div`
+.projectItem_img {
+    width :100%;
     height: 400px;
-overflow: hidden;
-border-radius: 12px;
-display: inline-block;
-border: 3px solid var(--gray-2);
-img{
-    height: 100%;
-}
-}
-.projectItem-info{
-    margin-top: 1rem;
-    background-color: var(--deep-dark);
-    padding: 1rem;
+   overflow: hidden;
     border-radius: 12px;
-}
-.projectItem-title{
-    font-size:2.2rem;
-}
-.projectItem-desc
-{
-    font-size: 1.6rem;
-    font-family: 'RobotoMono Regular';
-    margin-top:1rem;
-}
-@media only screen and(max-width: 768 px)
-{
-    .projectItem-img{
-        height: 350px;
+    display: inline-block;
+    border:3px solid var(--gray-2);
+    img{
+        height: 100%;
     }
 }
-`;
-
-export default function ProjectItems() {
+.projectItem__info{
+    margin-top: 1rem;
+background-color: var(--deep-dark);
+padding: 1rem;
+border-radius: 12px;
+}
+.projectItem__title{
+    font-size: 1.6rem;
+}
+.projectItem__desc{
+    font-size: 1.6rem;
+    font-family: 'RobotoMono Regular';
+}
+@media only screen and ( max-width: 768px)
+{
+    .projectItem__img{
+        height:350px;  
+    }
+}
+` ;
+export default function ProjectItems({
+    img=projectImg,
+    title='project Name',
+    desc='loren ipsum khullar', 
+}) {
     return (
-        <ProjectItemStyles>
-        <Link to="/projects" className="projectItem-img">
-        <img src={projectImg} alt="this is an image"></img> 
-            </Link>    
-            <div className="projectItem-info">
-            <Link to="#" >
-           <h3 className="projectItem-title">Project1</h3> 
+        <ProjectItemStyle>
+        <Link to="/projects" className="projectItem_img">
+        <img src={img} alt="this is an image" /> 
+        </Link>
+        <div className="projectItem__info">
+            <Link to="#">
+                <h3 className="projectItem__title">{title}</h3>
             </Link>
-            <p className="projectItem-desc">loren injojndc j jwd cjnjwne</p>   
-            </div>
-        </ProjectItemStyles>
+            <p className="projectItem__desc">
+               {desc}
+            </p>
+        </div>
+        </ProjectItemStyle>
     );
 }
