@@ -40,7 +40,7 @@ export default function FooterCol({
     ],
 }) {
     return (
-        <div>
+        <ColStyle>
           <h1 className="heading">{heading}</h1>
           <ul>
               {
@@ -55,6 +55,6 @@ links.map((item,index)=>(
     ))
 }
           </ul>
-        </div>
+        </ColStyle>
     );
 }
